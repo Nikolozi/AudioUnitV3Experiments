@@ -2,3 +2,4 @@
 *.xcbkptlist
 **/xcuserdata/*
 .DS_Store
+**/DEVELOPMENT_TEAM.xcconfig

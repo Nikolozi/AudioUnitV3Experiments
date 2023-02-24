@@ -4,6 +4,10 @@
 // SampleCode.xcconfig
 //
 
+// *** DELETE THE INCLUDE AND SET DEVELOPMENT_TEAM TO YOUR TEAM ID ***
+#include "DEVELOPMENT_TEAM.xcconfig"
+// DEVELOPMENT_TEAM = XXXXXXXXXX
+
 // The `SAMPLE_CODE_DISAMBIGUATOR` configuration is to make it easier to build
 // and run a sample code project. Once you set your project's development team,
 // you'll have a unique bundle identifier. This is because the bundle identifier

@@ -1,3 +1,11 @@
+# What is this?
+
+This is a fork of Apple's CreatingCustomAudioEffects sample code. Primary use case for this repo is to demonstrate possible bugs on Apple platforms or in Logic Pro / GarageBand. To compile the code, delete `#include "DEVELOPMENT_TEAM.xcconfig"` line in *SampleCode.xcconfig* file and replace it with `DEVELOPMENT_TEAM = XXXXXXXXXX` where `XXXXXXXXXX` is your Apple Develope Team ID.
+
+Below this line is the orignal unmodified ReadMe from the sample code.
+
+----
+ 
 # Creating Custom Audio Effects
 Add custom audio-effect processing to apps like Logic Pro X and GarageBand by creating Audio Unit (AU) plug-ins.
 
