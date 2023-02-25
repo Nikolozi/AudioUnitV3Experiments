@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C437FE8E222368A1008D6C09"
+               BlueprintIdentifier = "C437FE51222367CD008D6C09"
                BuildableName = "AUv3FilterFramework.framework"
-               BlueprintName = "AUv3FilterFramework macOS"
+               BlueprintName = "AUv3FilterFramework"
                ReferencedContainer = "container:AUv3Filter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

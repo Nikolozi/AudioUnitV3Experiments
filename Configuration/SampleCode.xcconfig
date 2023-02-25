@@ -16,5 +16,13 @@
 // they are frequently downloaded and don't have a development team set.
 SAMPLE_CODE_DISAMBIGUATOR=${DEVELOPMENT_TEAM}
 
+APP_INFO_PLIST = AUv3Filter/Info.plist
+FRAMEWORK_INFO_PLIST = AUv3FilterFramework/Info.plist
+
+AU_FILTER_EXTENSION_INFO_PLIST = AUv3FilterExtension/Info.plist
+
 AU_MIDI_EXTENSION_PRODUCT_NAME = AUv3MIDIExtension
-AU_MIDI_EXTENSION_INFO_PLIST = AUv3MIDI/AUv3Extension/Info.plist
+AU_MIDI_EXTENSION_INFO_PLIST = AUv3MIDIExtension/Info.plist
+
+CODE_SIGN_ENTITLEMENTS = AUv3Filter/App.entitlements
+AU_ENTITLEMENTS = Shared/AU.entitlements
