@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		895D363C29A8FDC600D5F907 /* AUv3FilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44F544822260E4200484B67 /* AUv3FilterExtension.swift */; };
-		895D363E29A8FDC600D5F907 /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE8F222368A1008D6C09 /* AUv3FilterFramework.framework */; };
-		89DA513629A9009800B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		89DA515229AA3B6C00B5AF8F /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
+		89DA515429AA3B6C00B5AF8F /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
+		89DA515629AA3B6C00B5AF8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BEE8112223734E001E6B6D /* MainInterface.storyboard */; };
+		89DA515C29AA3BEB00B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C4201A2922403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4201A2822403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift */; };
 		C433F56122404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
 		C437FE59222367CD008D6C09 /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
@@ -72,12 +73,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		89DA513729A9009800B5AF8F /* PBXContainerItemProxy */ = {
+		89DA515D29AA3BEB00B5AF8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C437FE302223672C008D6C09 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 895D363A29A8FDC600D5F907;
-			remoteInfo = "AUv3MIDIExtension macOS";
+			remoteGlobalIDString = 89DA515029AA3B6C00B5AF8F;
+			remoteInfo = AUv3MIDIExtension;
 		};
 		C437FE57222367CD008D6C09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -127,6 +128,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				89DA515C29AA3BEB00B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */,
 				C437FE712223686D008D6C09 /* AUv3FilterExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -150,7 +152,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C4660A602225F9A0007BE3B1 /* AUv3FilterExtension.appex in Embed App Extensions */,
-				89DA513629A9009800B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,8 +162,10 @@
 		4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		7E56CF207E56CEE000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
-		895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		895D364429A8FDC600D5F907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FD5BF829AA3FDA00CBE41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89FD5BF929AA427100CBE41D /* AUv3FilterExtension iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AUv3FilterExtension iOS.entitlements"; sourceTree = "<group>"; };
+		89FD5BFA29AA427100CBE41D /* AUv3MIDIExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AUv3MIDIExtension.entitlements; sourceTree = "<group>"; };
 		C4201A2822403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUv3FilterDemoViewControllerExtension.swift; sourceTree = "<group>"; };
 		C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUv3FilterDemoViewControllerExtension.swift; sourceTree = "<group>"; };
 		C437FE3A222367A6008D6C09 /* AUv3Filter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUv3Filter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,11 +223,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		895D363D29A8FDC600D5F907 /* Frameworks */ = {
+		89DA515329AA3B6C00B5AF8F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				895D363E29A8FDC600D5F907 /* AUv3FilterFramework.framework in Frameworks */,
+				89DA515429AA3B6C00B5AF8F /* AUv3FilterFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,18 +281,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		895D364529A8FE2000D5F907 /* AUv3MIDI */ = {
+		89FD5BF629AA3FDA00CBE41D /* AUv3MIDI */ = {
 			isa = PBXGroup;
 			children = (
-				895D364629A8FE6E00D5F907 /* AUv3Extension */,
+				89FD5BF729AA3FDA00CBE41D /* AUv3Extension */,
 			);
 			path = AUv3MIDI;
 			sourceTree = "<group>";
 		};
-		895D364629A8FE6E00D5F907 /* AUv3Extension */ = {
+		89FD5BF729AA3FDA00CBE41D /* AUv3Extension */ = {
 			isa = PBXGroup;
 			children = (
-				895D364429A8FDC600D5F907 /* Info.plist */,
+				89FD5BF829AA3FDA00CBE41D /* Info.plist */,
 			);
 			path = AUv3Extension;
 			sourceTree = "<group>";
@@ -297,8 +300,10 @@
 		C437FE2F2223672C008D6C09 = {
 			isa = PBXGroup;
 			children = (
+				89FD5BFA29AA427100CBE41D /* AUv3MIDIExtension.entitlements */,
+				89FD5BF929AA427100CBE41D /* AUv3FilterExtension iOS.entitlements */,
 				7E56CF207E56CEE000000001 /* README.md */,
-				895D364529A8FE2000D5F907 /* AUv3MIDI */,
+				89FD5BF629AA3FDA00CBE41D /* AUv3MIDI */,
 				C4BEE79622236A29001E6B6D /* iOS */,
 				C4BEE7B622236A58001E6B6D /* macOS */,
 				C4BEE7D522236E99001E6B6D /* Shared */,
@@ -318,7 +323,7 @@
 				C437FE7A2223688D008D6C09 /* AUv3Filter.app */,
 				C437FE8F222368A1008D6C09 /* AUv3FilterFramework.framework */,
 				C437FEA0222368B7008D6C09 /* AUv3FilterExtension.appex */,
-				895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */,
+				89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -543,21 +548,21 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */ = {
+		89DA515029AA3B6C00B5AF8F /* AUv3MIDIExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 895D364029A8FDC600D5F907 /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension macOS" */;
+			buildConfigurationList = 89DA515729AA3B6C00B5AF8F /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension" */;
 			buildPhases = (
-				895D363B29A8FDC600D5F907 /* Sources */,
-				895D363D29A8FDC600D5F907 /* Frameworks */,
-				895D363F29A8FDC600D5F907 /* Resources */,
+				89DA515129AA3B6C00B5AF8F /* Sources */,
+				89DA515329AA3B6C00B5AF8F /* Frameworks */,
+				89DA515529AA3B6C00B5AF8F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "AUv3MIDIExtension macOS";
-			productName = "AUv3FilterExtension macOS";
-			productReference = 895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */;
+			name = AUv3MIDIExtension;
+			productName = "AUv3FilterExtension iOS";
+			productReference = 89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		C437FE39222367A6008D6C09 /* AUv3Filter iOS */ = {
@@ -575,6 +580,7 @@
 			dependencies = (
 				C437FE58222367CD008D6C09 /* PBXTargetDependency */,
 				C437FE702223686D008D6C09 /* PBXTargetDependency */,
+				89DA515E29AA3BEB00B5AF8F /* PBXTargetDependency */,
 			);
 			name = "AUv3Filter iOS";
 			productName = "AUv3Filter iOS";
@@ -631,7 +637,6 @@
 			dependencies = (
 				C4660A5F2225F9A0007BE3B1 /* PBXTargetDependency */,
 				C4660A622225F9A0007BE3B1 /* PBXTargetDependency */,
-				89DA513829A9009800B5AF8F /* PBXTargetDependency */,
 			);
 			name = "AUv3Filter macOS";
 			productName = "AUv3Filter macOS";
@@ -743,16 +748,17 @@
 				C437FE792223688D008D6C09 /* AUv3Filter macOS */,
 				C437FE9F222368B7008D6C09 /* AUv3FilterExtension macOS */,
 				C437FE8E222368A1008D6C09 /* AUv3FilterFramework macOS */,
-				895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */,
+				89DA515029AA3B6C00B5AF8F /* AUv3MIDIExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		895D363F29A8FDC600D5F907 /* Resources */ = {
+		89DA515529AA3B6C00B5AF8F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DA515629AA3B6C00B5AF8F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,11 +815,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		895D363B29A8FDC600D5F907 /* Sources */ = {
+		89DA515129AA3B6C00B5AF8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				895D363C29A8FDC600D5F907 /* AUv3FilterExtension.swift in Sources */,
+				89DA515229AA3B6C00B5AF8F /* AUv3FilterDemoViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,10 +898,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		89DA513829A9009800B5AF8F /* PBXTargetDependency */ = {
+		89DA515E29AA3BEB00B5AF8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */;
-			targetProxy = 89DA513729A9009800B5AF8F /* PBXContainerItemProxy */;
+			target = 89DA515029AA3B6C00B5AF8F /* AUv3MIDIExtension */;
+			targetProxy = 89DA515D29AA3BEB00B5AF8F /* PBXContainerItemProxy */;
 		};
 		C437FE58222367CD008D6C09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -947,7 +953,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		895D364129A8FDC600D5F907 /* Debug */ = {
+		89DA515829AA3B6C00B5AF8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */;
 			buildSettings = {
@@ -981,12 +987,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = macOS/AUv3FilterExtension/AUv3FilterExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = AUv3MIDIExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1003,27 +1008,29 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = $AU_MIDI_EXTENSION_INFO_PLIST;
+				INFOPLIST_FILE = "${AU_MIDI_EXTENSION_INFO_PLIST}";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.$AU_MIDI_EXTENSION_PRODUCT_NAME";
-				PRODUCT_NAME = $AU_MIDI_EXTENSION_PRODUCT_NAME;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.${AU_MIDI_EXTENSION_PRODUCT_NAME}";
+				PRODUCT_NAME = "$(AU_MIDI_EXTENSION_PRODUCT_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		895D364229A8FDC600D5F907 /* Release */ = {
+		89DA515929AA3B6C00B5AF8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */;
 			buildSettings = {
@@ -1057,12 +1064,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = macOS/AUv3FilterExtension/AUv3FilterExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = AUv3MIDIExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1073,22 +1079,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = $AU_MIDI_EXTENSION_INFO_PLIST;
+				INFOPLIST_FILE = "${AU_MIDI_EXTENSION_INFO_PLIST}";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.$AU_MIDI_EXTENSION_PRODUCT_NAME";
-				PRODUCT_NAME = $AU_MIDI_EXTENSION_PRODUCT_NAME;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.${AU_MIDI_EXTENSION_PRODUCT_NAME}";
+				PRODUCT_NAME = "$(AU_MIDI_EXTENSION_PRODUCT_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1232,6 +1241,9 @@
 				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1300,6 +1312,9 @@
 				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -1502,6 +1517,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "AUv3FilterExtension iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -1536,6 +1552,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1577,6 +1594,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "AUv3FilterExtension iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -1604,6 +1622,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -2066,11 +2085,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		895D364029A8FDC600D5F907 /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension macOS" */ = {
+		89DA515729AA3B6C00B5AF8F /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				895D364129A8FDC600D5F907 /* Debug */,
-				895D364229A8FDC600D5F907 /* Release */,
+				89DA515829AA3B6C00B5AF8F /* Debug */,
+				89DA515929AA3B6C00B5AF8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
