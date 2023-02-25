@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895D363C29A8FDC600D5F907 /* AUv3FilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44F544822260E4200484B67 /* AUv3FilterExtension.swift */; };
+		895D363E29A8FDC600D5F907 /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE8F222368A1008D6C09 /* AUv3FilterFramework.framework */; };
+		89DA513629A9009800B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C4201A2922403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4201A2822403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift */; };
 		C433F56122404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
 		C437FE59222367CD008D6C09 /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
@@ -69,6 +72,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		89DA513729A9009800B5AF8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C437FE302223672C008D6C09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 895D363A29A8FDC600D5F907;
+			remoteInfo = "AUv3MIDIExtension macOS";
+		};
 		C437FE57222367CD008D6C09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C437FE302223672C008D6C09 /* Project object */;
@@ -140,6 +150,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C4660A602225F9A0007BE3B1 /* AUv3FilterExtension.appex in Embed App Extensions */,
+				89DA513629A9009800B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +161,8 @@
 		4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		7E56CF207E56CEE000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
+		895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		895D364429A8FDC600D5F907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4201A2822403120006E4333 /* AUv3FilterDemoViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUv3FilterDemoViewControllerExtension.swift; sourceTree = "<group>"; };
 		C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AUv3FilterDemoViewControllerExtension.swift; sourceTree = "<group>"; };
 		C437FE3A222367A6008D6C09 /* AUv3Filter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUv3Filter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +220,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		895D363D29A8FDC600D5F907 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				895D363E29A8FDC600D5F907 /* AUv3FilterFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C437FE37222367A6008D6C09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,10 +278,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		895D364529A8FE2000D5F907 /* AUv3MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				895D364629A8FE6E00D5F907 /* AUv3Extension */,
+			);
+			path = AUv3MIDI;
+			sourceTree = "<group>";
+		};
+		895D364629A8FE6E00D5F907 /* AUv3Extension */ = {
+			isa = PBXGroup;
+			children = (
+				895D364429A8FDC600D5F907 /* Info.plist */,
+			);
+			path = AUv3Extension;
+			sourceTree = "<group>";
+		};
 		C437FE2F2223672C008D6C09 = {
 			isa = PBXGroup;
 			children = (
 				7E56CF207E56CEE000000001 /* README.md */,
+				895D364529A8FE2000D5F907 /* AUv3MIDI */,
 				C4BEE79622236A29001E6B6D /* iOS */,
 				C4BEE7B622236A58001E6B6D /* macOS */,
 				C4BEE7D522236E99001E6B6D /* Shared */,
@@ -280,6 +318,7 @@
 				C437FE7A2223688D008D6C09 /* AUv3Filter.app */,
 				C437FE8F222368A1008D6C09 /* AUv3FilterFramework.framework */,
 				C437FEA0222368B7008D6C09 /* AUv3FilterExtension.appex */,
+				895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -504,6 +543,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 895D364029A8FDC600D5F907 /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension macOS" */;
+			buildPhases = (
+				895D363B29A8FDC600D5F907 /* Sources */,
+				895D363D29A8FDC600D5F907 /* Frameworks */,
+				895D363F29A8FDC600D5F907 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AUv3MIDIExtension macOS";
+			productName = "AUv3FilterExtension macOS";
+			productReference = 895D364329A8FDC600D5F907 /* AUv3MIDIExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C437FE39222367A6008D6C09 /* AUv3Filter iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C437FE4A222367A8008D6C09 /* Build configuration list for PBXNativeTarget "AUv3Filter iOS" */;
@@ -575,6 +631,7 @@
 			dependencies = (
 				C4660A5F2225F9A0007BE3B1 /* PBXTargetDependency */,
 				C4660A622225F9A0007BE3B1 /* PBXTargetDependency */,
+				89DA513829A9009800B5AF8F /* PBXTargetDependency */,
 			);
 			name = "AUv3Filter macOS";
 			productName = "AUv3Filter macOS";
@@ -686,11 +743,19 @@
 				C437FE792223688D008D6C09 /* AUv3Filter macOS */,
 				C437FE9F222368B7008D6C09 /* AUv3FilterExtension macOS */,
 				C437FE8E222368A1008D6C09 /* AUv3FilterFramework macOS */,
+				895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		895D363F29A8FDC600D5F907 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C437FE38222367A6008D6C09 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -744,6 +809,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		895D363B29A8FDC600D5F907 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				895D363C29A8FDC600D5F907 /* AUv3FilterExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C437FE36222367A6008D6C09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -819,6 +892,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		89DA513829A9009800B5AF8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 895D363A29A8FDC600D5F907 /* AUv3MIDIExtension macOS */;
+			targetProxy = 89DA513729A9009800B5AF8F /* PBXContainerItemProxy */;
+		};
 		C437FE58222367CD008D6C09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C437FE51222367CD008D6C09 /* AUv3FilterFramework iOS */;
@@ -869,6 +947,151 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		895D364129A8FDC600D5F907 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = macOS/AUv3FilterExtension/AUv3FilterExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = $AU_MIDI_EXTENSION_INFO_PLIST;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.$AU_MIDI_EXTENSION_PRODUCT_NAME";
+				PRODUCT_NAME = $AU_MIDI_EXTENSION_PRODUCT_NAME;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		895D364229A8FDC600D5F907 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = macOS/AUv3FilterExtension/AUv3FilterExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = $AU_MIDI_EXTENSION_INFO_PLIST;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.AUv3Filter${SAMPLE_CODE_DISAMBIGUATOR}.$AU_MIDI_EXTENSION_PRODUCT_NAME";
+				PRODUCT_NAME = $AU_MIDI_EXTENSION_PRODUCT_NAME;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C437FE342223672C008D6C09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */;
@@ -1843,6 +2066,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		895D364029A8FDC600D5F907 /* Build configuration list for PBXNativeTarget "AUv3MIDIExtension macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				895D364129A8FDC600D5F907 /* Debug */,
+				895D364229A8FDC600D5F907 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C437FE332223672C008D6C09 /* Build configuration list for PBXProject "AUv3Filter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
