@@ -94,6 +94,7 @@
 /* Begin PBXFileReference section */
 		4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		7E56CF207E56CEE000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8906D09C29AA473500B8F0AF /* Original_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Original_README.md; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
 		89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD5BF829AA3FDA00CBE41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				7E56CF207E56CEE000000001 /* README.md */,
+				8906D09C29AA473500B8F0AF /* Original_README.md */,
 				C4BEE7A222236A29001E6B6D /* AUv3Filter */,
 				C4BEE79722236A29001E6B6D /* AUv3FilterExtension */,
 				89FD5BF629AA3FDA00CBE41D /* AUv3MIDIExtension */,
