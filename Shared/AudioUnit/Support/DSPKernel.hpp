@@ -25,7 +25,7 @@ public:
     // Override to handle MIDI events.
     virtual void handleMIDIEvent(AUMIDIEvent const& midiEvent) {}
 
-    void processWithEvents(AudioTimeStamp const* timestamp, AUAudioFrameCount frameCount, AURenderEvent const* events, AUMIDIOutputEventBlock midiOut);
+    void processWithEvents(AudioTimeStamp const* timestamp, AUAudioFrameCount frameCount, AURenderEvent const* events);
 
     AUAudioFrameCount maximumFramesToRender() const {
         return maxFramesToRender;
@@ -35,9 +35,26 @@ public:
         maxFramesToRender = maxFrames;
     }
 
+    void setMIDIOutputEventBlock(AUMIDIOutputEventBlock midiOutputEventBlock) {
+        _midiOutputEventBlock = midiOutputEventBlock;
+    }
+
+    void setBuffers(AudioBufferList* inBufferList, AudioBufferList* outBufferList) {
+        inBufferListPtr = inBufferList;
+        outBufferListPtr = outBufferList;
+    }
+
+protected:
+    AUEventSampleTime _now = 0;
+
+    AudioBufferList* inBufferListPtr = nullptr;
+    AudioBufferList* outBufferListPtr = nullptr;
+
+    AUMIDIOutputEventBlock _midiOutputEventBlock = nullptr;
+
 private:
     void handleOneEvent(AURenderEvent const* event);
-    void performAllSimultaneousEvents(AUEventSampleTime now, AURenderEvent const*& event, AUMIDIOutputEventBlock midiOut);
+    void performAllSimultaneousEvents(AUEventSampleTime now, AURenderEvent const*& event);
 
     AUAudioFrameCount maxFramesToRender = 512;
 };

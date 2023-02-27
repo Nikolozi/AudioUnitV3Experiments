@@ -15,5 +15,7 @@ FOUNDATION_EXPORT const unsigned char AUv3FilterFramework_iOSVersionString[];
 
 // In this header, you import all the public headers of your framework using statements like #import <FilterDemoFramework/PublicHeader.h>.
 #import <AUv3FilterFramework/FilterDSPKernelAdapter.h>
+#import <AUv3FilterFramework/MIDIKernelAdapter.h>
+
 @class AUv3FilterDemo;
 @class AUv3FilterDemoViewController;

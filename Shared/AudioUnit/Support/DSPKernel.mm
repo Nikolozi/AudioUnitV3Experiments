@@ -26,14 +26,11 @@ void DSPKernel::handleOneEvent(AURenderEvent const *event) {
     }
 }
 
-void DSPKernel::performAllSimultaneousEvents(AUEventSampleTime now, AURenderEvent const *&event, AUMIDIOutputEventBlock midiOut) {
+void DSPKernel::performAllSimultaneousEvents(AUEventSampleTime now, AURenderEvent const *&event) {
+    _now = now;
+
     do {
         handleOneEvent(event);
-
-        if (event->head.eventType == AURenderEventMIDI && midiOut)
-        {
-            midiOut(now, 0, event->MIDI.length, event->MIDI.data);
-        }
         
         // Go to the next event.
         event = event->head.next;
@@ -46,7 +43,7 @@ void DSPKernel::performAllSimultaneousEvents(AUEventSampleTime now, AURenderEven
  This function handles the event list processing and rendering loop for you.
  Call it inside your internalRenderBlock.
  */
-void DSPKernel::processWithEvents(AudioTimeStamp const *timestamp, AUAudioFrameCount frameCount, AURenderEvent const *events, AUMIDIOutputEventBlock midiOut) {
+void DSPKernel::processWithEvents(AudioTimeStamp const *timestamp, AUAudioFrameCount frameCount, AURenderEvent const *events) {
 
     AUEventSampleTime now = AUEventSampleTime(timestamp->mSampleTime);
     AUAudioFrameCount framesRemaining = frameCount;
@@ -77,7 +74,7 @@ void DSPKernel::processWithEvents(AudioTimeStamp const *timestamp, AUAudioFrameC
             now += AUEventSampleTime(framesThisSegment);
         }
 
-        performAllSimultaneousEvents(now, event, midiOut);
+        performAllSimultaneousEvents(now, event);
     }
 }
 

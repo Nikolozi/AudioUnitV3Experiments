@@ -15,6 +15,9 @@
 		8906D0A929AC950100B8F0AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D0A829AC950100B8F0AF /* MainView.swift */; };
 		8925E41E29ACC4590005151B /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
 		8925E41F29ACC4590005151B /* AUv3FilterFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8925E42629ACCB140005151B /* MIDIKernelAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8925E42429ACCA7C0005151B /* MIDIKernelAdapter.mm */; };
+		8925E42729ACCB200005151B /* MIDIKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8925E42329ACCA7C0005151B /* MIDIKernel.hpp */; };
+		8925E42829ACCB200005151B /* MIDIKernelAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8925E42529ACCA7C0005151B /* MIDIKernelAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89DA515429AA3B6C00B5AF8F /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
 		89DA515C29AA3BEB00B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C433F56122404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
@@ -104,6 +107,9 @@
 		8906D0A429AC93F300B8F0AF /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
 		8906D0A629AC94F300B8F0AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8906D0A829AC950100B8F0AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8925E42329ACCA7C0005151B /* MIDIKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MIDIKernel.hpp; sourceTree = "<group>"; };
+		8925E42429ACCA7C0005151B /* MIDIKernelAdapter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MIDIKernelAdapter.mm; sourceTree = "<group>"; };
+		8925E42529ACCA7C0005151B /* MIDIKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDIKernelAdapter.h; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
 		89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD5BF829AA3FDA00CBE41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 				8906D09E29AC7E2500B8F0AF /* AUv3MIDIDemo.swift */,
 				8906D09D29AC7D5A00B8F0AF /* AUv3MIDIDemoViewController.swift */,
 				8906D0A229AC7FF900B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift */,
+				8925E42329ACCA7C0005151B /* MIDIKernel.hpp */,
+				8925E42529ACCA7C0005151B /* MIDIKernelAdapter.h */,
+				8925E42429ACCA7C0005151B /* MIDIKernelAdapter.mm */,
 				89FD5BF829AA3FDA00CBE41D /* Info.plist */,
 				8906D0A629AC94F300B8F0AF /* MainViewModel.swift */,
 				8906D0A829AC950100B8F0AF /* MainView.swift */,
@@ -354,8 +363,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8925E42829ACCB200005151B /* MIDIKernelAdapter.h in Headers */,
 				C4F004A12239B1E10014E248 /* FilterDSPKernelAdapter.h in Headers */,
 				C4BEE8172223736F001E6B6D /* AUv3FilterFramework.h in Headers */,
+				8925E42729ACCB200005151B /* MIDIKernel.hpp in Headers */,
 				C4BEE7EF22236F24001E6B6D /* ParameterRamper.hpp in Headers */,
 				C4BEE7F122236F24001E6B6D /* BufferedAudioBus.hpp in Headers */,
 				C4BEE7EE22236F24001E6B6D /* FilterDSPKernel.hpp in Headers */,
@@ -548,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8925E42629ACCB140005151B /* MIDIKernelAdapter.mm in Sources */,
 				8906D0A729AC94F300B8F0AF /* MainViewModel.swift in Sources */,
 				8906D0A029AC7FDC00B8F0AF /* AUv3MIDIDemo.swift in Sources */,
 				8906D0A129AC7FDC00B8F0AF /* AUv3MIDIDemoViewController.swift in Sources */,

@@ -204,11 +204,6 @@ public:
         }
     }
 
-    void setBuffers(AudioBufferList* inBufferList, AudioBufferList* outBufferList) {
-        inBufferListPtr = inBufferList;
-        outBufferListPtr = outBufferList;
-    }
-
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) override {
         if (bypassed) {
             // Pass the samples through.
@@ -276,9 +271,6 @@ private:
     float nyquist = 0.5 * sampleRate;
     float inverseNyquist = 1.0 / nyquist;
     AUAudioFrameCount dezipperRampDuration;
-
-    AudioBufferList* inBufferListPtr = nullptr;
-    AudioBufferList* outBufferListPtr = nullptr;
 
     bool bypassed = false;
 

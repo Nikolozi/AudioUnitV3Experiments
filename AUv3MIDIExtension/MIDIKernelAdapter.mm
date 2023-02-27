@@ -1,19 +1,12 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The adapter object that provides a Swift-accessible interface to the filter's underlying DSP code.
-*/
-
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudioKit/AUViewController.h>
-#import "FilterDSPKernel.hpp"
+#import "MIDIKernel.hpp"
 #import "BufferedAudioBus.hpp"
-#import "FilterDSPKernelAdapter.h"
+#import "MIDIKernelAdapter.h"
 
-@implementation FilterDSPKernelAdapter {
+@implementation MIDIKernelAdapter {
     // C++ members need to be ivars; they would be copied on access if they were properties.
-    FilterDSPKernel  _kernel;
+    MIDIKernel  _kernel;
     BufferedInputBus _inputBus;
 }
 
@@ -23,11 +16,9 @@ The adapter object that provides a Swift-accessible interface to the filter's un
         AVAudioFormat *format = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100 channels:2];
         // Create a DSP kernel to handle the signal processing.
         _kernel.init(format.channelCount, format.sampleRate);
-        _kernel.setParameter(FilterParamCutoff, 0);
-        _kernel.setParameter(FilterParamResonance, 0);
 
         // Create the input and output busses.
-        _inputBus.init(format, 8);
+        _inputBus.init(format, 2);
         _outputBus = [[AUAudioUnitBus alloc] initWithFormat:format error:nil];
     }
     return self;
@@ -35,33 +26,6 @@ The adapter object that provides a Swift-accessible interface to the filter's un
 
 - (AUAudioUnitBus *)inputBus {
     return _inputBus.bus;
-}
-
-- (NSArray<NSNumber *> *)magnitudesForFrequencies:(NSArray<NSNumber *> *)frequencies {
-    FilterDSPKernel::BiquadCoefficients coefficients;
-
-    double inverseNyquist = 2.0 / self.outputBus.format.sampleRate;
-
-    coefficients.calculateLopassParams(_kernel.cutoffRamper.getUIValue(), _kernel.resonanceRamper.getUIValue());
-
-    NSMutableArray<NSNumber *> *magnitudes = [NSMutableArray arrayWithCapacity:frequencies.count];
-
-    for (NSNumber *number in frequencies) {
-        double frequency = [number doubleValue];
-        double magnitude = coefficients.magnitudeForFrequency(frequency * inverseNyquist);
-
-        [magnitudes addObject:@(magnitude)];
-    }
-
-    return [NSArray arrayWithArray:magnitudes];
-}
-
-- (void)setParameter:(AUParameter *)parameter value:(AUValue)value {
-    _kernel.setParameter(parameter.address, value);
-}
-
-- (AUValue)valueForParameter:(AUParameter *)parameter {
-    return _kernel.getParameter(parameter.address);
 }
 
 - (AUAudioFrameCount)maximumFramesToRender {
@@ -72,18 +36,14 @@ The adapter object that provides a Swift-accessible interface to the filter's un
     _kernel.setMaximumFramesToRender(maximumFramesToRender);
 }
 
-- (BOOL)shouldBypassEffect {
-    return _kernel.isBypassed();
-}
-
-- (void)setShouldBypassEffect:(BOOL)bypass {
-    _kernel.setBypass(bypass);
-}
-
 - (void)allocateRenderResources {
     _inputBus.allocateRenderResources(self.maximumFramesToRender);
     _kernel.init(self.outputBus.format.channelCount, self.outputBus.format.sampleRate);
     _kernel.reset();
+}
+
+- (void)setMIDIOutputEventBlock:(AUMIDIOutputEventBlock)midiOutputEventBlock {
+    _kernel.setMIDIOutputEventBlock(midiOutputEventBlock);
 }
 
 - (void)deallocateRenderResources {
@@ -98,7 +58,7 @@ The adapter object that provides a Swift-accessible interface to the filter's un
      Capture in locals to avoid ObjC member lookups. Don't capture "self" in render.
      */
     // Specify that captured objects are mutable.
-    __block FilterDSPKernel *state = &_kernel;
+    __block MIDIKernel *state = &_kernel;
     __block BufferedInputBus *input = &_inputBus;
 
     return ^AUAudioUnitStatus(AudioUnitRenderActionFlags *actionFlags,
