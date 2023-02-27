@@ -22,11 +22,10 @@ public class AUv3MIDIDemoViewController: AUViewController {
     }
 
     public func setAudioUnit(_ audioUnit: AUv3MIDIDemo) {
-        assert(Thread.isMainThread)
-
         let mainView = internalView.addSwiftUISubview(
             MainView()
-                .environmentObject(mainViewModel)
+                .environmentObject(mainViewModel),
+            parent: self
         )
 
         NSLayoutConstraint.activate([

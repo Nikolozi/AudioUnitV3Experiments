@@ -29,8 +29,6 @@
 				<dict>
 					<key>description</key>
 					<string>AUv3MIDIDemo</string>
-					<key>factoryFunction</key>
-					<string>$(PRODUCT_MODULE_NAME).AUv3MIDIDemoViewController</string>
 					<key>manufacturer</key>
 					<string>Demo</string>
 					<key>name</key>
@@ -50,8 +48,8 @@
 				</dict>
 			</array>
 		</dict>
-        <key>NSExtensionPrincipalClass</key>
-        <string>AUv3MIDIDemoViewController</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>AUv3MIDIDemoViewController</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.AudioUnit-UI</string>
 	</dict>
