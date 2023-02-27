@@ -20,6 +20,20 @@
                ReferencedContainer = "container:AUv3Filter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C437FE39222367A6008D6C09"
+               BuildableName = "AUv3Filter.app"
+               BlueprintName = "AUv3Filter"
+               ReferencedContainer = "container:AUv3Filter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

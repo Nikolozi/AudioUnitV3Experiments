@@ -134,15 +134,11 @@ public class AudioUnitManager {
                 fatalError("Could not find app extension bundle URL.")
         }
 
-        #if os(iOS)
-        let storyboard = Storyboard(name: "MainInterface", bundle: appexBundle)
+        let storyboard = UIStoryboard(name: "MainInterface", bundle: appexBundle)
         guard let controller = storyboard.instantiateInitialViewController() as? AUv3FilterDemoViewController else {
             fatalError("Unable to instantiate AUv3FilterDemoViewController")
         }
         return controller
-        #elseif os(macOS)
-        return AUv3FilterDemoViewController(nibName: "AUv3FilterDemoViewController", bundle: appexBundle)
-        #endif
     }
 
     /**

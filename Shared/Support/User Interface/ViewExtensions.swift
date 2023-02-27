@@ -5,7 +5,7 @@ Abstract:
 Small extensions to simplify view handling in the demo app.
 */
 
-public extension View {
+public extension UIView {
     func pinToSuperviewEdges() {
         guard let superview = superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
@@ -17,7 +17,7 @@ public extension View {
         ])
     }
 
-    func setBorder(color: Color, width: CGFloat) {
+    func setBorder(color: UIColor, width: CGFloat) {
         #if os(iOS)
         layer.borderColor = color.cgColor
         layer.borderWidth = CGFloat(width)

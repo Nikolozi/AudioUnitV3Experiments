@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		89DA515229AA3B6C00B5AF8F /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
+		8906D0A029AC7FDC00B8F0AF /* AUv3MIDIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D09E29AC7E2500B8F0AF /* AUv3MIDIDemo.swift */; };
+		8906D0A129AC7FDC00B8F0AF /* AUv3MIDIDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D09D29AC7D5A00B8F0AF /* AUv3MIDIDemoViewController.swift */; };
+		8906D0A329AC801D00B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D0A229AC7FF900B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift */; };
+		8906D0A529AC93F300B8F0AF /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D0A429AC93F300B8F0AF /* UIKitHelpers.swift */; };
+		8906D0A729AC94F300B8F0AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D0A629AC94F300B8F0AF /* MainViewModel.swift */; };
+		8906D0A929AC950100B8F0AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8906D0A829AC950100B8F0AF /* MainView.swift */; };
 		89DA515429AA3B6C00B5AF8F /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
-		89DA515629AA3B6C00B5AF8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BEE8112223734E001E6B6D /* MainInterface.storyboard */; };
 		89DA515C29AA3BEB00B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C433F56122404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
 		C437FE59222367CD008D6C09 /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
@@ -27,7 +31,6 @@
 		C4BEE7F722236F2D001E6B6D /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE7E722236E99001E6B6D /* DSPKernel.mm */; };
 		C4BEE7F822236F44001E6B6D /* AudioUnitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE7E022236E99001E6B6D /* AudioUnitManager.swift */; };
 		C4BEE80322236F6F001E6B6D /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE7D922236E99001E6B6D /* FilterView.swift */; };
-		C4BEE80422236F6F001E6B6D /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE7DB22236E99001E6B6D /* TypeAliases.swift */; };
 		C4BEE80522236F6F001E6B6D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE7D722236E99001E6B6D /* ViewExtensions.swift */; };
 		C4BEE81022237302001E6B6D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BEE80F22237302001E6B6D /* MainViewController.swift */; };
 		C4BEE8132223734E001E6B6D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BEE8112223734E001E6B6D /* MainInterface.storyboard */; };
@@ -95,6 +98,12 @@
 		4311B2DA5B4A02595B1F8E6D /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		7E56CF207E56CEE000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8906D09C29AA473500B8F0AF /* Original_README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Original_README.md; sourceTree = "<group>"; };
+		8906D09D29AC7D5A00B8F0AF /* AUv3MIDIDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUv3MIDIDemoViewController.swift; sourceTree = "<group>"; };
+		8906D09E29AC7E2500B8F0AF /* AUv3MIDIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUv3MIDIDemo.swift; sourceTree = "<group>"; };
+		8906D0A229AC7FF900B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUv3MIDIDemoViewControllerExtension.swift; sourceTree = "<group>"; };
+		8906D0A429AC93F300B8F0AF /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
+		8906D0A629AC94F300B8F0AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8906D0A829AC950100B8F0AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
 		89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD5BF829AA3FDA00CBE41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +125,6 @@
 		C4BEE7AA22236A29001E6B6D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4BEE7D722236E99001E6B6D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		C4BEE7D922236E99001E6B6D /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
-		C4BEE7DB22236E99001E6B6D /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		C4BEE7E022236E99001E6B6D /* AudioUnitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitManager.swift; sourceTree = "<group>"; };
 		C4BEE7E322236E99001E6B6D /* FilterDSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FilterDSPKernel.hpp; sourceTree = "<group>"; };
 		C4BEE7E522236E99001E6B6D /* ParameterRamper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ParameterRamper.hpp; sourceTree = "<group>"; };
@@ -176,7 +184,12 @@
 		89FD5BF629AA3FDA00CBE41D /* AUv3MIDIExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8906D09E29AC7E2500B8F0AF /* AUv3MIDIDemo.swift */,
+				8906D09D29AC7D5A00B8F0AF /* AUv3MIDIDemoViewController.swift */,
+				8906D0A229AC7FF900B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift */,
 				89FD5BF829AA3FDA00CBE41D /* Info.plist */,
+				8906D0A629AC94F300B8F0AF /* MainViewModel.swift */,
+				8906D0A829AC950100B8F0AF /* MainView.swift */,
 			);
 			path = AUv3MIDIExtension;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 				89FD5BFB29AA449000CBE41D /* AU.entitlements */,
 				C4BEE7E022236E99001E6B6D /* AudioUnitManager.swift */,
 				C4F07730223AC4F5008FFF06 /* AUv3FilterDemoViewController.swift */,
+				8906D0A429AC93F300B8F0AF /* UIKitHelpers.swift */,
 				C4BEE7E122236E99001E6B6D /* AudioUnit */,
 				C4F07733223AC506008FFF06 /* Support */,
 			);
@@ -302,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				C4BEE7D922236E99001E6B6D /* FilterView.swift */,
-				C4BEE7DB22236E99001E6B6D /* TypeAliases.swift */,
 				C4BEE7D722236E99001E6B6D /* ViewExtensions.swift */,
 			);
 			path = "User Interface";
@@ -482,7 +495,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89DA515629AA3B6C00B5AF8F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89DA515229AA3B6C00B5AF8F /* AUv3FilterDemoViewControllerExtension.swift in Sources */,
+				8906D0A329AC801D00B8F0AF /* AUv3MIDIDemoViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +547,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8906D0A729AC94F300B8F0AF /* MainViewModel.swift in Sources */,
+				8906D0A029AC7FDC00B8F0AF /* AUv3MIDIDemo.swift in Sources */,
+				8906D0A129AC7FDC00B8F0AF /* AUv3MIDIDemoViewController.swift in Sources */,
+				8906D0A529AC93F300B8F0AF /* UIKitHelpers.swift in Sources */,
 				C4BEE7F722236F2D001E6B6D /* DSPKernel.mm in Sources */,
 				C4BEE80522236F6F001E6B6D /* ViewExtensions.swift in Sources */,
 				C4F07731223AC4F5008FFF06 /* AUv3FilterDemoViewController.swift in Sources */,
@@ -542,8 +558,8 @@
 				C4BEE7F822236F44001E6B6D /* AudioUnitManager.swift in Sources */,
 				C4A3D65B223FF12A002784D4 /* SimplePlayEngine.swift in Sources */,
 				C4BEE80322236F6F001E6B6D /* FilterView.swift in Sources */,
-				C4BEE80422236F6F001E6B6D /* TypeAliases.swift in Sources */,
 				C4F0772E223AACBB008FFF06 /* AUv3FilterDemoParameters.swift in Sources */,
+				8906D0A929AC950100B8F0AF /* MainView.swift in Sources */,
 				C4F004A32239B1E10014E248 /* FilterDSPKernelAdapter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -999,11 +1015,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1082,11 +1100,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

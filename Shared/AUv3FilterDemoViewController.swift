@@ -20,20 +20,20 @@ public class AUv3FilterDemoViewController: AUViewController {
 
     @IBOutlet weak var filterView: FilterView!
 
-    @IBOutlet weak var frequencyTextField: TextField!
-    @IBOutlet weak var resonanceTextField: TextField!
+    @IBOutlet weak var frequencyTextField: UITextField!
+    @IBOutlet weak var resonanceTextField: UITextField!
     
     var observer: NSKeyValueObservation?
 
     var needsConnection = true
 
-    @IBOutlet var expandedView: View! {
+    @IBOutlet var expandedView: UIView! {
         didSet {
             expandedView.setBorder(color: .black, width: 1)
         }
     }
 
-    @IBOutlet var compactView: View! {
+    @IBOutlet var compactView: UIView! {
         didSet {
             compactView.setBorder(color: .black, width: 1)
         }
@@ -159,15 +159,15 @@ public class AUv3FilterDemoViewController: AUViewController {
         updateFilterViewFrequencyAndMagnitudes()
     }
 
-    @IBAction func frequencyUpdated(_ sender: TextField) {
+    @IBAction func frequencyUpdated(_ sender: UITextField) {
         update(parameter: cutoffParameter, with: sender)
     }
 
-    @IBAction func resonanceUpdated(_ sender: TextField) {
+    @IBAction func resonanceUpdated(_ sender: UITextField) {
         update(parameter: resonanceParameter, with: sender)
     }
 
-    func update(parameter: AUParameter, with textField: TextField) {
+    func update(parameter: AUParameter, with textField: UITextField) {
         guard let value = (textField.text as NSString?)?.floatValue else { return }
         parameter.value = value
         textField.text = parameter.string(fromValue: nil)

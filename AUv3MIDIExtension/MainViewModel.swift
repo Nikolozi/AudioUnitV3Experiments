@@ -1,0 +1,3 @@
+final class MainViewModel: ObservableObject {
+
+}
