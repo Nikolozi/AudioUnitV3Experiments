@@ -162,6 +162,7 @@ public class AUv3FilterDemo: AUAudioUnit {
         }
         try super.allocateRenderResources()
         kernelAdapter.allocateRenderResources()
+        kernelAdapter.setMIDIOutputEventBlock(self.midiOutputEventBlock)
     }
 
     public override func deallocateRenderResources() {

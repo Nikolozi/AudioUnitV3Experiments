@@ -204,6 +204,16 @@ public:
         }
     }
 
+    void handleMIDIEvent(AUMIDIEvent const& event) override {
+        if (_midiOutputEventBlock) {
+            const auto MIDIChannelVoiceMessageNoteOn = 0x90;
+            if ((MIDIChannelVoiceMessageNoteOn & event.data[0]) != 0) { // note-on event
+                const auto frequency = 440.0 * exp2((event.data[1] - 69.0) / 12.0);
+                cutoffRamper.startRamp(frequency * inverseNyquist, dezipperRampDuration);
+            }
+        }
+    }
+
     void process(AUAudioFrameCount frameCount, AUAudioFrameCount bufferOffset) override {
         if (bypassed) {
             // Pass the samples through.

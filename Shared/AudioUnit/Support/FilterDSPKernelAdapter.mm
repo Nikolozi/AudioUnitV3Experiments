@@ -80,6 +80,10 @@ The adapter object that provides a Swift-accessible interface to the filter's un
     _kernel.setBypass(bypass);
 }
 
+- (void)setMIDIOutputEventBlock:(AUMIDIOutputEventBlock)midiOutputEventBlock {
+    _kernel.setMIDIOutputEventBlock(midiOutputEventBlock);
+}
+
 - (void)allocateRenderResources {
     _inputBus.allocateRenderResources(self.maximumFramesToRender);
     _kernel.init(self.outputBus.format.channelCount, self.outputBus.format.sampleRate);

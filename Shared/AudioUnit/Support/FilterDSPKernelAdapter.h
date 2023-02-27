@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deallocateRenderResources;
 - (AUInternalRenderBlock)internalRenderBlock;
 
+- (void)setMIDIOutputEventBlock:(nullable AUMIDIOutputEventBlock)midiOutputEventBlock;
+
 - (NSArray<NSNumber *> *)magnitudesForFrequencies:(NSArray<NSNumber *> *)frequencies;
 
 @end
