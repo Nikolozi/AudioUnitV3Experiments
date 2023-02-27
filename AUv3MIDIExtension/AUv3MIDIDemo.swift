@@ -3,7 +3,7 @@ import AudioToolbox
 import AVFoundation
 import CoreAudioKit
 
-public class AUv3MIDIDemo: AUAudioUnit {
+public class AUv3MIDIDemo: SharedAUAudioUnit {
     private let kernelAdapter: MIDIKernelAdapter
 
     lazy private var inputBusArray: AUAudioUnitBusArray = {
@@ -24,6 +24,14 @@ public class AUv3MIDIDemo: AUAudioUnit {
 
     public override var outputBusses: AUAudioUnitBusArray {
         return outputBusArray
+    }
+
+    override var inputBusSampleRate: Double {
+        kernelAdapter.inputBus.format.sampleRate
+    }
+
+    override var outputBusSampleRate: Double {
+        kernelAdapter.outputBus.format.sampleRate
     }
 
     public override init(componentDescription: AudioComponentDescription,

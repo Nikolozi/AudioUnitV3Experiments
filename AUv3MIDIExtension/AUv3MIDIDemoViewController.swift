@@ -7,8 +7,6 @@ public class AUv3MIDIDemoViewController: AUViewController {
     /// This is required as loadView may not be called before Audio Unit is set.
     private let internalView = UIView()
 
-    private let mainViewModel = MainViewModel()
-
     public override init(nibName: String?, bundle: Bundle?) {
         super.init(nibName: nil, bundle: nil)
     }
@@ -22,6 +20,8 @@ public class AUv3MIDIDemoViewController: AUViewController {
     }
 
     public func setAudioUnit(_ audioUnit: AUv3MIDIDemo) {
+        let mainViewModel = MainViewModel(audioUnit: audioUnit)
+
         let mainView = internalView.addSwiftUISubview(
             MainView()
                 .environmentObject(mainViewModel),

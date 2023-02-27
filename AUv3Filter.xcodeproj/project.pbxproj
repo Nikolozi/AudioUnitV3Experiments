@@ -18,6 +18,7 @@
 		8925E42629ACCB140005151B /* MIDIKernelAdapter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8925E42429ACCA7C0005151B /* MIDIKernelAdapter.mm */; };
 		8925E42729ACCB200005151B /* MIDIKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8925E42329ACCA7C0005151B /* MIDIKernel.hpp */; };
 		8925E42829ACCB200005151B /* MIDIKernelAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8925E42529ACCA7C0005151B /* MIDIKernelAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8925E42A29ACE4E40005151B /* SharedAUAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925E42929ACE4E40005151B /* SharedAUAudioUnit.swift */; };
 		89DA515429AA3B6C00B5AF8F /* AUv3FilterFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437FE52222367CD008D6C09 /* AUv3FilterFramework.framework */; };
 		89DA515C29AA3BEB00B5AF8F /* AUv3MIDIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C433F56122404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433F56022404C7C00F1B750 /* AUv3FilterDemoViewControllerExtension.swift */; };
@@ -110,6 +111,7 @@
 		8925E42329ACCA7C0005151B /* MIDIKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MIDIKernel.hpp; sourceTree = "<group>"; };
 		8925E42429ACCA7C0005151B /* MIDIKernelAdapter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MIDIKernelAdapter.mm; sourceTree = "<group>"; };
 		8925E42529ACCA7C0005151B /* MIDIKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDIKernelAdapter.h; sourceTree = "<group>"; };
+		8925E42929ACE4E40005151B /* SharedAUAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAUAudioUnit.swift; sourceTree = "<group>"; };
 		895D363929A8F57D00D5F907 /* DEVELOPMENT_TEAM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = DEVELOPMENT_TEAM.xcconfig; path = Configuration/DEVELOPMENT_TEAM.xcconfig; sourceTree = "<group>"; };
 		89DA515A29AA3B6C00B5AF8F /* AUv3MIDIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AUv3MIDIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD5BF829AA3FDA00CBE41D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				8906D0A429AC93F300B8F0AF /* UIKitHelpers.swift */,
 				C4BEE7E122236E99001E6B6D /* AudioUnit */,
 				C4F07733223AC506008FFF06 /* Support */,
+				8925E42929ACE4E40005151B /* SharedAUAudioUnit.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8925E42629ACCB140005151B /* MIDIKernelAdapter.mm in Sources */,
+				8925E42A29ACE4E40005151B /* SharedAUAudioUnit.swift in Sources */,
 				8906D0A729AC94F300B8F0AF /* MainViewModel.swift in Sources */,
 				8906D0A029AC7FDC00B8F0AF /* AUv3MIDIDemo.swift in Sources */,
 				8906D0A129AC7FDC00B8F0AF /* AUv3MIDIDemoViewController.swift in Sources */,

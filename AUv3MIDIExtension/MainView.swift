@@ -6,6 +6,11 @@ struct MainView {
 
 extension MainView: View {
     var body: some View {
-        Text("AUv3 Demo")
+        TimelineView(.animation) { _ in
+            VStack {
+                Text("INPUT Bus Sample Rate \(Int(viewModel.audioUnit.inputBusSampleRate))")
+                Text("OUTPUT Bus Sample Rate \(Int(viewModel.audioUnit.outputBusSampleRate))")
+            }
+        }
     }
 }
