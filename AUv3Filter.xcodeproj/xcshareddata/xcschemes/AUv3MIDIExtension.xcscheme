@@ -55,11 +55,15 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <RemoteRunnable
-         runnableDebuggingMode = "0"
-         BundleIdentifier = "com.apple.logic10"
-         RemotePath = "/Applications/Logic Pro X.app">
-      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C437FE39222367A6008D6C09"
+            BuildableName = "AUv3Filter.app"
+            BlueprintName = "AUv3Filter"
+            ReferencedContainer = "container:AUv3Filter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
