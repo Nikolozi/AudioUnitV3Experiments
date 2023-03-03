@@ -1,5 +1,11 @@
 # Issue Details
 
+## Update 
+I have submitted Developer Technical Support (DTS) regarding this issue and I received a reply to file a bug report. Case-ID: 1674516
+
+Feedback ID is: FB12029567
+
+
 ## Description
 
 The `aumf / kAudioUnitType_MusicEffect` type of AUv3 plug-in is not appearing in Logic under the **AU MIDI-controlled Effects** menu. I would like to figure out whether this is a bug in Logic or there's a code change that's required to have it working in Logic as expected.
