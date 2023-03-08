@@ -1,5 +1,20 @@
 # Issue Details
 
+## Update
+I have submitted Developer Technical Support (DTS) regarding this issue, Case-ID: 1674081.
+
+I received a reply that the sample rate is provided to the AUv3 MIDI in `allocateRenderResourcesAndReturnError` through the `format` property of the output bus. And it appears there's a bug in Logic Pro as it doesn't update the sample rate for the AUv3 MIDI plug-ins. I was asked to submit a bug report.
+
+Feedback ID: FB12042397
+
+It also looks it's possble to have audio side chains in MIDI processor plug-ins and it's up to a host to do it.
+>It is possible from the standpoint of the `AUAudioUnit` interface to declare a side chain input in a MIDI processor plug-in. A side chain is simply an input bus for instruments, and an extra input bus for effects. However, it is up to the host to provide input to the side chain. This is currently not possible in Logic Pro. If you would like for Apple to consider adding support for such features, please submit your suggestion via Feedback Assistant.
+
+Feedback ID: FB12042407
+
+---
+## Description & Steps to reproduce it
+
 **The main question:** how is a MIDI AUv3 plug-in supposed to figure out host's sample rate?
 
 MIDI AUv3 plug-in being of type `aumi / kAudioUnitType_MIDIProcessor`.
