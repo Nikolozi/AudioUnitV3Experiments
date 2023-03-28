@@ -25,6 +25,8 @@ public class AUv3FilterDemoViewController: AUViewController {
     
     var observer: NSKeyValueObservation?
 
+    private let console = UITextView()
+
     var needsConnection = true
 
     @IBOutlet var expandedView: UIView! {
@@ -83,27 +85,14 @@ public class AUv3FilterDemoViewController: AUViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        preferredContentSize = CGSize(width: 800, height: 500)
-        
-        view.addSubview(expandedView)
-        expandedView.pinToSuperviewEdges()
 
-        // Set the default view configuration.
-        viewConfig = expanded
+        console.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(console)
+    }
 
-        // Respond to changes in the filterView (frequency and/or response changes).
-        filterView.delegate = self
-
-        #if os(iOS)
-        frequencyTextField.delegate = self
-        resonanceTextField.delegate = self
-        #endif
-
-        guard audioUnit != nil else { return }
-
-        // Connect the user interface to the audio unit parameters, if necessary.
-        connectViewToAU()
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        console.frame = view.bounds
     }
 
     private func connectViewToAU() {
@@ -173,44 +162,6 @@ public class AUv3FilterDemoViewController: AUViewController {
         textField.text = parameter.string(fromValue: nil)
     }
 
-    // MARK: View Configuration Selection
-
-    public func toggleViewConfiguration() {
-        // Let the audio unit call selectViewConfiguration instead of calling
-        // it directly to ensure validation of the audio unit's behavior.
-        audioUnit?.select(viewConfig == expanded ? compact : expanded)
-    }
-
-    func selectViewConfiguration(_ viewConfig: AUAudioUnitViewConfiguration) {
-        // If the requested configuration is already active, do nothing.
-        guard self.viewConfig != viewConfig else { return }
-
-        self.viewConfig = viewConfig
-
-        let isDefault = viewConfig.width >= expanded.width &&
-                        viewConfig.height >= expanded.height
-        let fromView = isDefault ? compactView : expandedView
-        let toView = isDefault ? expandedView : compactView
-
-        performOnMain {
-            #if os(iOS)
-            UIView.transition(from: fromView!,
-                              to: toView!,
-                              duration: 0.2,
-                              options: [.transitionCrossDissolve, .layoutSubviews])
-
-            if toView == self.expandedView {
-                toView?.pinToSuperviewEdges()
-            }
-
-            #elseif os(macOS)
-            self.view.addSubview(toView!)
-            fromView!.removeFromSuperview()
-            toView!.pinToSuperviewEdges()
-            #endif
-        }
-    }
-
     func performOnMain(_ operation: @escaping () -> Void) {
         if Thread.isMainThread {
             operation()
@@ -219,6 +170,35 @@ public class AUv3FilterDemoViewController: AUViewController {
                 operation()
             }
         }
+    }
+}
+
+extension AUv3FilterDemoViewController {
+    private func logToConsole(_ text: String) {
+        console.text = """
+        \(console.text ?? "")
+        \(text)
+        """
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        logToConsole("== viewWillAppear ==")
+    }
+
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        logToConsole("== viewDidAppear ==")
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        logToConsole("== viewWillDisappear ==")
+    }
+
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        logToConsole("== viewDidDisappear ==")
     }
 }
 

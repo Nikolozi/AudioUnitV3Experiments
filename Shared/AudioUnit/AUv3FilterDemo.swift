@@ -199,10 +199,6 @@ public class AUv3FilterDemo: AUAudioUnit {
         }
         return indexSet
     }
-
-    public override func select(_ viewConfiguration: AUAudioUnitViewConfiguration) {
-        viewController?.selectViewConfiguration(viewConfiguration)
-    }
 }
 
 extension FourCharCode {

@@ -193,9 +193,7 @@ public class AudioUnitManager {
         return playEngine.togglePlay()
     }
 
-    public func toggleView() {
-        viewController.toggleViewConfiguration()
-    }
+    public func toggleView() {}
 
     public func cleanup() {
         playEngine.stopPlaying()
