@@ -7,7 +7,47 @@ The view controller for the AUv3FilterDemo audio unit that manages the interacti
 
 import CoreAudioKit
 
+final class DisplayLinkWrapper {
+    private var displayLink: CADisplayLink?
+
+    func callback(_ callback: @escaping () -> Void) {
+        displayLink?.invalidate()
+
+        let displayLink = CADisplayLink(
+            target: UnownedTarget(callback: callback),
+            selector: #selector(UnownedTarget.displayLinkCallback)
+        )
+
+        displayLink.add(to: .current, forMode: .common)
+
+        self.displayLink = displayLink
+    }
+
+    deinit {
+        displayLink?.invalidate()
+    }
+}
+
+private final class UnownedTarget: NSObject {
+    private let callback: () -> Void
+
+    init(callback: @escaping () -> Void) {
+        self.callback = callback
+    }
+
+    @objc func displayLinkCallback() {
+        callback()
+    }
+
+    deinit {
+        debugPrint("DisplayLinkWrapper.UnownedTarget - deinit")
+    }
+}
+
+
 public class AUv3FilterDemoViewController: AUViewController {
+    private var frameCounter: Int = 0
+    private let displayLink = DisplayLinkWrapper()
 
     let compact = AUAudioUnitViewConfiguration(width: 400, height: 100, hostHasController: false)
     let expanded = AUAudioUnitViewConfiguration(width: 800, height: 500, hostHasController: false)
@@ -70,17 +110,6 @@ public class AUv3FilterDemoViewController: AUViewController {
         }
     }
 
-    #if os(macOS)
-    public override init(nibName: NSNib.Name?, bundle: Bundle?) {
-        // Pass a reference to the owning framework bundle.
-        super.init(nibName: nibName, bundle: Bundle(for: type(of: self)))
-    }
-    #endif
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
     // MARK: Lifecycle
 
     public override func viewDidLoad() {
@@ -88,6 +117,16 @@ public class AUv3FilterDemoViewController: AUViewController {
 
         console.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(console)
+
+        displayLink.callback { [unowned self] in
+            if frameCounter > 240 {
+                logToConsole("==== window = \(view.window)")
+                logToConsole("==== superview = \(view.superview)")
+                frameCounter = 0
+            } else {
+                frameCounter += 1
+            }
+        }
     }
 
     public override func viewDidLayoutSubviews() {

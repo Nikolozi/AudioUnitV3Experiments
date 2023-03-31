@@ -1,5 +1,9 @@
 # Issue Details
 
+## Update
+
+The lates commits adds a way of checking if AU's main view's superview or window goes away after user closes the AU window in Logic. They don't seem. The video `IssueDetails\LogicPro-superview-window.mov` demonstrates this. When closed it still logs information about the superview and window.
+
 ## Description
 
 What API should an Audio Unit v3 (AUv3) plug-in be using to figure out whether its UI is being displayed to the user or if it's hidden? My plug-in displays a lot of animation in its UI, and if the user has multiple instances of my plug-in in a session it will use a lot of CPU. As it will needlessly be refreshing its UI. I found, on iOS, AUViewController's viewWillDisapper and viewDidDisappear get called but not on macOS.
