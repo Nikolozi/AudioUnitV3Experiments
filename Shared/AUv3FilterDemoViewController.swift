@@ -25,6 +25,8 @@ public class AUv3FilterDemoViewController: AUViewController {
     
     var observer: NSKeyValueObservation?
 
+    let console = NSTextView()
+
     var needsConnection = true
 
     @IBOutlet var expandedView: View! {
@@ -86,24 +88,42 @@ public class AUv3FilterDemoViewController: AUViewController {
         
         preferredContentSize = CGSize(width: 800, height: 500)
         
-        view.addSubview(expandedView)
-        expandedView.pinToSuperviewEdges()
+        //view.addSubview(expandedView)
+        //expandedView.pinToSuperviewEdges()
 
         // Set the default view configuration.
-        viewConfig = expanded
+        //viewConfig = expanded
 
         // Respond to changes in the filterView (frequency and/or response changes).
-        filterView.delegate = self
+        //filterView.delegate = self
 
         #if os(iOS)
-        frequencyTextField.delegate = self
-        resonanceTextField.delegate = self
+        //frequencyTextField.delegate = self
+        //resonanceTextField.delegate = self
         #endif
 
-        guard audioUnit != nil else { return }
+        //guard audioUnit != nil else { return }
 
         // Connect the user interface to the audio unit parameters, if necessary.
-        connectViewToAU()
+        //connectViewToAU()
+
+        view.addSubview(console)
+        console.frame = .init(x: 0, y: 0, width: 500, height: 500)
+        view.layer?.backgroundColor = NSColor.white.cgColor
+    }
+
+    public override func viewDidAppear() {
+        super.viewDidAppear()
+        logToConsole("viewDidAppear")
+    }
+
+    public override func viewDidDisappear() {
+        super.viewDidDisappear()
+        logToConsole("viewDidDisappear")
+    }
+
+    private func logToConsole(_ text: String) {
+        console.string += "\n\(text)"
     }
 
     private func connectViewToAU() {
