@@ -118,10 +118,17 @@ public class AUv3FilterDemoViewController: AUViewController {
         console.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(console)
 
-        displayLink.callback { [unowned self] in
+        displayLink.callback { [weak self] in
+            guard let self else {
+                assert(false)
+                return
+            }
+
             if frameCounter > 240 {
-                logToConsole("==== window = \(view.window)")
-                logToConsole("==== superview = \(view.superview)")
+                assert(view.window != nil)
+                assert(view.superview != nil)
+                logToConsole("==== window isHidden = \(view.window!.isHidden)")
+                logToConsole("==== superview isHidden = \(view.superview!.isHidden)")
                 frameCounter = 0
             } else {
                 frameCounter += 1
