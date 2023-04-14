@@ -110,13 +110,27 @@ public class AUv3FilterDemoViewController: AUViewController {
         }
     }
 
-    // MARK: Lifecycle
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func windowDidBecomeVisible(_ notification: Notification) {
+        logToConsole("===== XX windowDidBecomeVisible XX ====")
+    }
+
+    @objc func windowDidBecomeHidden(_ notification: Notification) {
+        logToConsole("===== XX windowDidBecomeHidden XX ====")
+    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         console.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(console)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeVisible(_:)), name: UIWindow.didBecomeVisibleNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeHidden(_:)), name: UIWindow.didBecomeHiddenNotification, object: nil)
 
         displayLink.callback { [weak self] in
             guard let self else {

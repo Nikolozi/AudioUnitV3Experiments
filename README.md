@@ -1,6 +1,9 @@
 # Issue Details
 
 
+## Update 3
+The last commit demonstrates that the `UIWindow.didBecomeHiddenNotification` notification is never called when the user closes the AUv3 window in Logic. The `UIWindow.didBecomeVisibleNotification` is only called once when opening the AUv3 window for the first time.
+
 ## Update 2
 
 The last commit demonstrates the isHidden remains false even after the window is closed.
