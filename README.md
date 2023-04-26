@@ -1,20 +1,28 @@
 # Issue Details
 
+## Update 4
+After a few email exchanges with an engineer from Apple Developer Technical Support, Case-ID: 1997379, and experimentation, it has become clear that a subclass of AUViewController when used in a MacCatalyst AUv3 plug-in doesn't receive viewWill/DidAppear/Disappear callbacks. SwiftUI’s `onAppear`, `onDisappear` and `onChange` of `scenePhase`, also aren't getting called.
+
+However, when it's a pure macOS AUv3 then it works as expected. And things work correctly on iOS.
+
+This branch `detecting_plug-in_window_closure` has the code demonstrating the issue. The `detecting_plug-in_closure_nsviewcontroller` branch uses native code, where viewDidAppear and viewDidDisappear are called every time the plug-in window is open and closed in Logic Pro.
+
+I have submitted a bug report to Apple: FB12145974.
 
 ## Update 3
 The last commit demonstrates that the `UIWindow.didBecomeHiddenNotification` notification is never called when the user closes the AUv3 window in Logic. The `UIWindow.didBecomeVisibleNotification` is only called once when opening the AUv3 window for the first time.
 
 ## Update 2
 
-The last commit demonstrates the isHidden remains false even after the window is closed.
+The last commit demonstrates isHidden remains false even after the window is closed.
 
-Additionally, I did a separate investigation on the `detecting_plug-in_closure_nsviewcontroller` branch, where I used the original code, which is macOS native code (i.e. NOT MacCatalyst), and it appears that viewDidAppear and viewDidDisappear is called every time plug-in windows is open and closed in Logic Pro. In this scenario, AUViewController is a subclass of NSViewController.
+Additionally, I did a separate investigation on the `detecting_plug-in_closure_nsviewcontroller` branch, where I used the original code, which is macOS native code (i.e. NOT MacCatalyst), and it appears that viewDidAppear and viewDidDisappear are called every time plug-in windows is open and closed in Logic Pro. In this scenario, AUViewController is a subclass of NSViewController.
 
 My conclusion is that a subclass of AUViewController when used in a MacCatalyst AUv3 plug-in doesn't receive viewWill/DidAppear/Disappear callbacks. However, when it's a pure macOS AUv3 then it works as expected. And things work correctly on iOS (as previously mentioned).
 
 ## Update
 
-The latest commits adds a way of checking if AU's main view's superview or window goes away after user closes the AU window in Logic. They don't seem. The video `IssueDetails\LogicPro-superview-window.mov` demonstrates this. When closed it still logs information about the superview and window.
+The latest commits add a way of checking if AU's main view's superview or window goes away after user closes the AU window in Logic. They don't seem. The video `IssueDetails\LogicPro-superview-window.mov` demonstrates this. When closed it still logs information about the superview and window.
 
 ## Description
 
