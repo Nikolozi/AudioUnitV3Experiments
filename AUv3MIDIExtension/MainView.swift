@@ -6,11 +6,9 @@ struct MainView {
 
 extension MainView: View {
     var body: some View {
-        TimelineView(.animation) { _ in
-            VStack {
-                Text("INPUT Bus Sample Rate \(Int(viewModel.audioUnit.inputBusSampleRate))")
-                Text("OUTPUT Bus Sample Rate \(Int(viewModel.audioUnit.outputBusSampleRate))")
-            }
+        VStack {
+            Text("**Parameter Tree Observed Changes**")
+            Text(viewModel.treeInfo)
         }
     }
 }

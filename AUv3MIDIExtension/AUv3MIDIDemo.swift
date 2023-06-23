@@ -3,7 +3,7 @@ import AudioToolbox
 import AVFoundation
 import CoreAudioKit
 
-public class AUv3MIDIDemo: SharedAUAudioUnit {
+public class AUv3MIDIDemo: AUAudioUnit {
     private let kernelAdapter: MIDIKernelAdapter
 
     lazy private var inputBusArray: AUAudioUnitBusArray = {
@@ -26,14 +26,6 @@ public class AUv3MIDIDemo: SharedAUAudioUnit {
         return outputBusArray
     }
 
-    override var inputBusSampleRate: Double {
-        kernelAdapter.inputBus.format.sampleRate
-    }
-
-    override var outputBusSampleRate: Double {
-        kernelAdapter.outputBus.format.sampleRate
-    }
-
     public override init(componentDescription: AudioComponentDescription,
                          options: AudioComponentInstantiationOptions = []) throws {
 
@@ -45,6 +37,44 @@ public class AUv3MIDIDemo: SharedAUAudioUnit {
 
         // Log the component description values.
         log(componentDescription)
+
+        let parameters = (1 ... 3).map { index  in
+            AUParameterTree.createParameter(
+                withIdentifier: "init\(index)",
+                name: "From Init \(index)",
+                address: index,
+                min: 0, max: 1, unit: .generic, unitName: nil,
+                flags: [.flag_IsReadable, .flag_IsWritable, .flag_CanRamp],
+                valueStrings: nil, dependentParameters: nil
+            )
+        }
+        parameterTree = AUParameterTree.createTree(withChildren: parameters)
+    }
+
+    public override var fullState: [String : Any]? {
+        set {
+            // After loading a preset dynamically create a new parameter tree.
+
+            let parameters = (1 ... 3).map { index  in
+                AUParameterTree.createParameter(
+                    withIdentifier: "fullState\(index)",
+                    name: "From fullState \(index)",
+                    address: index,
+                    min: 0, max: 1, unit: .generic, unitName: nil,
+                    flags: [.flag_IsReadable, .flag_IsWritable, .flag_CanRamp],
+                    valueStrings: nil, dependentParameters: nil
+                )
+            }
+
+            willChangeValue(for: \.parameterTree)
+            willChangeValue(for: \.allParameterValues)
+            parameterTree = AUParameterTree.createTree(withChildren: parameters)
+            didChangeValue(for: \.parameterTree)
+            didChangeValue(for: \.allParameterValues)
+        }
+        get {
+            return ["Stuff": "Stuff"]
+        }
     }
 
     private func log(_ acd: AudioComponentDescription) {
